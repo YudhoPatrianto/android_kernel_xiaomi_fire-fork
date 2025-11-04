@@ -510,7 +510,6 @@ static int aw87xxx_profile_switch_get(struct snd_kcontrol *kcontrol,
 			struct snd_ctl_elem_value *ucontrol)
 {
 	int index = 0;
-	char *profile;
 	struct aw87xxx *aw87xxx = (struct aw87xxx *)kcontrol->private_value;
 
 	if (aw87xxx == NULL) {
@@ -523,7 +522,6 @@ static int aw87xxx_profile_switch_get(struct snd_kcontrol *kcontrol,
 		return -EINVAL;
 	}
 
-	profile = aw87xxx->current_profile;
 	AW_DEV_LOGI(aw87xxx->dev, "current profile:[%s]",
 		aw87xxx->current_profile);
 
@@ -1704,3 +1702,4 @@ module_exit(aw87xxx_pa_exit);
 MODULE_AUTHOR("<zhaozhongbo@awinic.com>");
 MODULE_DESCRIPTION("awinic aw87xxx pa driver");
 MODULE_LICENSE("GPL v2");
+
