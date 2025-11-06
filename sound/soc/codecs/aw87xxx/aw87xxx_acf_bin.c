@@ -149,9 +149,6 @@ static int aw_check_header_size(struct device *dev,
 static int aw_check_ddt_size_v_0_0_0_1(struct device *dev, char *fw_data)
 {
 	struct aw_acf_hdr *acf_hdr = (struct aw_acf_hdr *)fw_data;
-	struct aw_acf_dde *acf_dde = NULL;
-
-	acf_dde = (struct aw_acf_dde *)(fw_data + acf_hdr->ddt_offset);
 
 	/* check ddt_size in acf_header is aqual to ddt_num multiply by dde_size */
 	if (acf_hdr->ddt_size != acf_hdr->dde_num * sizeof(struct aw_acf_dde)) {
@@ -1555,4 +1552,5 @@ void aw87xxx_acf_init(struct aw_device *aw_dev, struct acf_bin_info *acf_info, i
 	acf_info->fw_data = NULL;
 	acf_info->fw_size = 0;
 }
+
 
