@@ -132,7 +132,7 @@ static int fts_detect_charger_notifier_callback(struct notifier_block *self,
 	fts_charger_flag = event;
 	ret = queue_work(fts_charger_detect_workqueue, &fts_charger_detect_work);
 	FTS_INFO("nvt_detect_charger_notifier_callback end\n");
-	return ret;
+	return 0;
 }
 
 int fts_check_cid(struct fts_ts_data *ts_data, u8 id_h)
